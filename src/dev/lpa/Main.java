@@ -45,10 +45,24 @@ public class Main {
 
     }
 
+    public static void switchDayOfWeek (DayOfTheWeek weekDay){
+        int weekDayInteger = weekDay.ordinal() + 1;
+        switch (weekDay) {
+            case WEDNESDAY -> {
+                // .name() method can not be overridden.
+                System.out.println("Wednesday is day " + weekDay.name());
+                // automatically call the toString() method which can be overridden!
+                System.out.println("Wednesday is day " + weekDay);
+            }
+
+        }
+    }
+
     public static DayOfTheWeek getRandomDay(){
         int randomInt = new Random().nextInt(7);
         // An array of all the enum constant values
         var allDays = DayOfTheWeek.values();
+        switchDayOfWeek(allDays[randomInt]);
         // Access the specific element of Array using index.
         return allDays[randomInt];
     }

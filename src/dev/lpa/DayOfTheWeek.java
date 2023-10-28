@@ -9,4 +9,9 @@ public enum DayOfTheWeek {
 
     // Some other examples of possible enum declarations might be:
     // The months in the year, a set of sizes, the direction in a compass (north..)
+
+    @Override
+    public String toString() {
+        return "Day: " + name();
+    }
 }
